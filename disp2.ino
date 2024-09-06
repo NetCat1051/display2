@@ -1,10 +1,8 @@
 #include <Adafruit_SSD1306.h>
 #include <splash.h>
-
 #include "SPI.h"
 
 #define BUTTON_PIN 4
-
 #define MOTOR1_IN1 5
 #define MOTOR1_IN2 6
 #define MOTOR2_IN1 7
@@ -15,6 +13,7 @@
 #define SCREEN_HEIGHT 64 // Высота дисплея в пикселях
 
 Adafruit_SSD1306 display(SCREEN_WIDTH, SCREEN_HEIGHT, &Wire, -1);
+
 int s = 0;
 
 void setup() {
@@ -59,5 +58,6 @@ void loop() {
     digitalWrite(MOTOR2_IN1, HIGH);
     digitalWrite(MOTOR2_IN2, LOW);
     delay(s);
+    display.clearDisplay();
   }
 }
